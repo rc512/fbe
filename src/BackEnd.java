@@ -2,29 +2,22 @@ import java.util.List;
 
 
 public class BackEnd {
-<<<<<<< HEAD
-	public List<String> getMessages(String username)
-=======
-	//public List<String>getMessages(String username)
->>>>>>> origin/master
+	public List<String>getMessages(String username)
+
 	{
 		return null;
+		
 		
 	}
 	public void addMessage(String username,String msg)
 	{
-<<<<<<< HEAD
-		
+		Encoder.write();
+
 	}
-	public List<String> getUsers()
+	public List<String>getUser()
+	
 	{
-		return null;
-=======
-	//	Encoder.write()
-	}
-	//public List<String>getUser()
-	{
-	//	return 
->>>>>>> origin/master
+		return null; 
+ 
 	}
 }
