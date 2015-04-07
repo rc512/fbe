@@ -4,6 +4,7 @@ import java.util.List;
 
 public class BackEnd {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public List<String>getMessages(String username)
 
 =======
@@ -13,6 +14,11 @@ public class BackEnd {
 	{
 		
 		return null;
+=======
+	public List<String>getMessages(String username)
+	{
+		
+>>>>>>> parent of 0567890... 420
 		
 <<<<<<< HEAD
 		
@@ -32,6 +38,7 @@ public class BackEnd {
 	public void addMessage(String username,String msg)
 	{
 		Encoder.write()
+<<<<<<< HEAD
 		
 	}
 	public List<String>getUser()
@@ -40,5 +47,11 @@ public class BackEnd {
 		return 
 		return null;
 >>>>>>> origin/master
+=======
+	}
+	public List<String>getUser()
+	{
+		return 
+>>>>>>> parent of 0567890... 420
 	}
 }
