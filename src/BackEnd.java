@@ -2,17 +2,17 @@ import java.util.List;
 
 
 public class BackEnd {
-	public List<String>getMessages(String username)
+	//public List<String>getMessages(String username)
 	{
 		
 		
 	}
 	public void addMessage(String username,String msg)
 	{
-		Encoder.write()
+	//	Encoder.write()
 	}
-	public List<String>getUser()
+	//public List<String>getUser()
 	{
-		return 
+	//	return 
 	}
 }
