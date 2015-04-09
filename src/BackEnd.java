@@ -1,23 +1,34 @@
+import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeMap;
 
 
 public class BackEnd {
+	static TreeMap<String,List<String>> usermap = new TreeMap<String,List<String>>();
+	
+	
 	public static List<String>getMessages(String username)
 
 	{
-		return null;
-		
+	return usermap.get(username);
 		
 	}
 	public static void addMessage(String username,String msg)
 	{
-		Encoder.write();
+		List<String> messagelist = new ArrayList<String>();
+		messagelist.add(msg);
+		usermap.put(username, messagelist);
 
 	}
-	public static List<String>getUser()
+	public List<String>getUsers()
 	
 	{
-		return null; 
+		List<String> ayy = new ArrayList<String>();
+		for(String key : usermap.keySet())
+		{
+			ayy.add(key);
+		}
+		return ayy;
  
 	}
 }
