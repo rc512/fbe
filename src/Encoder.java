@@ -21,7 +21,7 @@ public class Encoder
 			PrintWriter pw = new PrintWriter(file);
 			for(char x : plaintext.toCharArray())
 			{
-				pw.write((char)(x - 420));
+				pw.write((char)(x - 13));
 			}
 			pw.append("\n");
 			pw.close();
@@ -36,20 +36,20 @@ public class Encoder
 	{
 		try
 		{
-			Scanner fin = new Scanner(file);
-			ArrayList<String> temp = new ArrayList<String>();
-			while(fin.hasNextLine())
+			Scanner end = new Scanner(file);
+			ArrayList<String> key = new ArrayList<String>();
+			while(end.hasNextLine())
 			{
-				String s = fin.nextLine();
+				String s = end.nextLine();
 				String k = "";
 				for(char x : s.toCharArray())
 				{
 					k += (char)(x + 13);
 				}
-				temp.add(k);
+				key.add(k);
 			}
-			fin.close();
-			return temp;
+			end.close();
+			return key;
 		}
 		catch (FileNotFoundException a)
 		{
