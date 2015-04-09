@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Encoder 
 {
-	private File file;
+	private static File file;
 	public Encoder(String filename)
 	{
 		file = new File(filename);

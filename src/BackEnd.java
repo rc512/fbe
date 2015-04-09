@@ -5,18 +5,20 @@ import java.util.TreeMap;
 
 public class BackEnd {
 	static TreeMap<String,List<String>> usermap = new TreeMap<String,List<String>>();
-	
+	static Encoder E = new Encoder("super secret");
 	
 	public static List<String>getMessages(String username)
 
 	{
-	return usermap.get(username);
+	return E.read();
 		
 	}
 	public static void addMessage(String username,String msg)
 	{
+		
 		List<String> messagelist = new ArrayList<String>();
 		messagelist.add(msg);
+		E.write(msg);
 		usermap.put(username, messagelist);
 
 	}
