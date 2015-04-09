@@ -1,45 +1,62 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 
 public class Encoder 
 {
+	private File file;
 	public Encoder(String filename)
 	{
-		try 
+		file = new File(filename);
+	}
+	
+	public void write(String plaintext)
+	{
+		try
 		{
-			Scanner fin = new Scanner(new File(filename));
-			
-			while(fin.hasNextLine())
+			PrintWriter pw = new PrintWriter(file);
+			for(char x : plaintext.toCharArray())
 			{
-				String[] s = fin.nextLine().split("\t");
-				
-				for (int i = 1; i < s.length; i++)
-				{
-					this.read();
-				}
+				pw.write((char)(x - 420));
 			}
-			
-			
-			fin.close();
-		} 
+			pw.append("\n");
+			pw.close();
+		}
 		catch (FileNotFoundException e) 
 		{
 			e.printStackTrace();
 		}
 	}
 	
-	public void write(String plaintext)
+	public ArrayList<String> read()
 	{
-		return;
-	}
-	
-	public List<String> read()
-	{
-		return null;
+		try
+		{
+			Scanner fin = new Scanner(file);
+			ArrayList<String> temp = new ArrayList<String>();
+			while(fin.hasNextLine())
+			{
+				String s = fin.nextLine();
+				String k = "";
+				for(char x : s.toCharArray())
+				{
+					k += (char)(x + 13);
+				}
+				temp.add(k);
+			}
+			fin.close();
+			return temp;
+		}
+		catch (FileNotFoundException a)
+		{
+			a.printStackTrace();
+		}
 		
+		return null;
 	}
 
 }
